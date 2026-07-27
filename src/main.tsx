@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import App from './App';
-import Cursos from './pages/cursos.tsx';
+import CursosPage from './pages/cursos';
 import './styles.css';
 
 function AppRoutes() {
@@ -25,7 +25,7 @@ function AppRoutes() {
     <div className={`pageTransition ${direction === 'forward' ? 'pageTransitionForward' : 'pageTransitionBackward'}`}>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/cursos" element={<Cursos />} />
+        <Route path="/cursos" element={<CursosPage />} />
       </Routes>
     </div>
   );
