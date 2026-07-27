@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import App from './App';
-import Cursos from './pages/Cursos';
+import Cursos from './pages/cursos.tsx';
 import './styles.css';
 
 function AppRoutes() {
@@ -10,7 +10,7 @@ function AppRoutes() {
   const [direction, setDirection] = React.useState<'forward' | 'backward'>('forward');
 
   React.useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
   }, [location.pathname]);
 
   React.useEffect(() => {

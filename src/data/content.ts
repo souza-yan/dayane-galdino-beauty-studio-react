@@ -1,8 +1,8 @@
 export const links = {
-  whatsapp: '',
-  hotmart: '',
-  shopee: '',
-  instagram: '',
+  whatsapp: 'https://wa.me/',
+  hotmart: 'https://hotmart.com/',
+  shopee: 'https://shopee.com.br/',
+  instagram: 'https://www.instagram.com/',
 };
 
 export const navItems = [
