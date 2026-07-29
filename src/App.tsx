@@ -13,11 +13,11 @@ import {
 import { links, navItems } from './data/content';
 
 const images = {
-  hero: '/images/dayanepose.PNG',
-  notebook: '/images/dayanecomputador.jpeg',
-  portrait: '/images/dayane.jpeg',
-  cta: '/images/dayanemake.jpeg',
-  logo: '/images/dayaneperfil.PNG',
+  hero: '/src/assets/images/dayanepose.PNG',
+  notebook: '/src/assets/images/dayanecomputador.jpeg',
+  portrait: '/src/assets/images/dayane.jpeg',
+  cta: '/src/assets/images/dayanemake.jpeg',
+  logo: '/src/assets/images/dayaneperfil.PNG',
 };
 
 function App() {
@@ -26,21 +26,30 @@ function App() {
   const lastScrollY = useRef(0);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
 
-      if (menuOpen) {
-        setShowHeader(true);
-      } else if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
-        setShowHeader(false);
-      } else {
-        setShowHeader(true);
+          if (menuOpen || currentScrollY <= 40) {
+            setShowHeader(true);
+          } else if (currentScrollY > lastScrollY.current + 10) {
+            setShowHeader(false);
+          } else if (currentScrollY < lastScrollY.current - 10) {
+            setShowHeader(true);
+          }
+
+          lastScrollY.current = currentScrollY;
+          ticking = false;
+        });
+
+        ticking = true;
       }
-
-      lastScrollY.current = currentScrollY;
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [menuOpen]);
 
@@ -419,6 +428,47 @@ function App() {
 
         </section>
 
+
+        {/* DEPOIMENTOS E FAQ */}
+
+        <section className="socialProof section">
+          <div className="sectionHeading">
+            <span className="eyebrow dark">CONFIANÇA E RESULTADOS</span>
+            <h2>
+              O que as pessoas sentem ao viver essa experiência
+            </h2>
+            <p>
+              Cada atendimento e curso é pensado para entregar mais segurança, beleza e clareza para o seu caminho.
+            </p>
+          </div>
+
+          <div className="proofGrid">
+            <article className="proofCard">
+              <p>“Senti muito mais segurança para me maquiar e transmitir minha imagem com confiança.”</p>
+              <strong>Ana P.</strong>
+            </article>
+            <article className="proofCard">
+              <p>“Os conteúdos me ajudaram a entender minha beleza de uma forma muito mais leve e bonita.”</p>
+              <strong>Camila R.</strong>
+            </article>
+            <article className="proofCard">
+              <p>“O atendimento foi acolhedor, profissional e me fez enxergar meu potencial.”</p>
+              <strong>Juliana M.</strong>
+            </article>
+          </div>
+
+          <div className="faqBox">
+            <h3>Perguntas frequentes</h3>
+            <div className="faqItem">
+              <strong>Os cursos são indicados para iniciantes?</strong>
+              <p>Sim. Os conteúdos foram pensados para quem está começando e para quem deseja evoluir.</p>
+            </div>
+            <div className="faqItem">
+              <strong>Posso entrar em contato antes de comprar?</strong>
+              <p>Claro. Você pode me chamar no WhatsApp para tirar dúvidas e receber orientação.</p>
+            </div>
+          </div>
+        </section>
 
         {/* CTA FINAL */}
 

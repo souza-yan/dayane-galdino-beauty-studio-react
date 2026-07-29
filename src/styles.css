@@ -27,6 +27,12 @@ body {
   margin: 0;
   min-width: 320px;
   background: #f7f2ec;
+  color: #332326;
+}
+
+::selection {
+  background: rgba(155, 118, 95, 0.25);
+  color: #332326;
 }
 
 .pageTransition {
@@ -89,7 +95,7 @@ main {
 ========================================= */
 
 .header {
-  height: 82px;
+  height: 84px;
   padding: 0 6%;
 
   display: flex;
@@ -97,6 +103,8 @@ main {
   justify-content: space-between;
 
   background: rgba(250, 247, 243, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
   position: fixed;
   top: 0;
@@ -105,15 +113,19 @@ main {
   width: 100%;
 
   z-index: 20;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.3s ease,
+              box-shadow 0.3s ease;
   transform: translateY(0);
   opacity: 1;
+  will-change: transform, opacity;
+  box-shadow: 0 8px 24px rgba(91, 42, 46, 0.06);
 }
 
 .header.hidden {
-  transform: translateY(-100%);
+  transform: translateY(-110%);
   opacity: 0;
-
+  box-shadow: none;
   border-bottom: 1px solid rgba(91, 42, 46, 0.1);
 }
 
@@ -185,13 +197,17 @@ main {
   padding: 12px 18px;
 
   border: 1px solid #5b2a2e;
+  border-radius: 999px;
 
   color: #5b2a2e;
+  font-weight: 600;
+  transition: all 0.25s ease;
 }
 
 .navCta:hover {
   background: #5b2a2e;
-
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(91, 42, 46, 0.16);
   color: white !important;
 }
 
@@ -225,7 +241,7 @@ main {
 ========================================= */
 
 .hero {
-  min-height: calc(100vh - 82px);
+  min-height: calc(100vh - 84px);
 
   display: flex;
 
@@ -344,7 +360,7 @@ em {
 }
 
 .button.primary {
-  background: #5b2a2e;
+  background: linear-gradient(135deg, #5b2a2e 0%, #7a3f43 100%);
 
   color: #fff;
 }
@@ -546,8 +562,19 @@ em {
 
 .card.featured {
   padding: 0;
-
   overflow: hidden;
+  background: linear-gradient(135deg, #5b2a2e 0%, #7a3f43 100%);
+  color: #fff;
+}
+
+.card.featured .cardBody,
+.card.featured .tag,
+.card.featured .card a {
+  color: #fff;
+}
+
+.card.featured .card a:hover {
+  color: #f5e6dc;
 }
 
 .cardImage {
@@ -778,6 +805,69 @@ em {
   margin: 20px 0 35px;
 }
 
+
+/* =========================================
+   DEPOIMENTOS E FAQ
+========================================= */
+
+.socialProof {
+  padding: 70px 7% 40px;
+}
+
+.proofGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.proofCard,
+.faqBox {
+  background: #faf7f3;
+  border: 1px solid rgba(91, 42, 46, 0.08);
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 12px 30px rgba(91, 42, 46, 0.05);
+}
+
+.proofCard p {
+  margin: 0 0 16px;
+  color: #705e5d;
+  line-height: 1.7;
+}
+
+.proofCard strong {
+  color: #5b2a2e;
+}
+
+.faqBox {
+  margin-top: 24px;
+}
+
+.faqBox h3 {
+  margin: 0 0 18px;
+  font-family: Georgia, serif;
+  font-size: 24px;
+  color: #5b2a2e;
+}
+
+.faqItem + .faqItem {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(91, 42, 46, 0.1);
+}
+
+.faqItem strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #5b2a2e;
+}
+
+.faqItem p {
+  margin: 0;
+  color: #705e5d;
+  line-height: 1.6;
+}
 
 /* =========================================
    FOOTER
@@ -1717,4 +1807,418 @@ em {
   object-fit: contain;
   background: transparent;
   border-radius: 0;
+}
+
+/* =======================================================
+   LANDING PAGE DOS CURSOS
+======================================================= */
+
+.coursePage{
+    background:#f8f3ef;
+    color:#3d2a28;
+    min-height:100vh;
+}
+
+.courseHeader{
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 7%;
+
+    background:rgba(248,243,239,.95);
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(0,0,0,.06);
+}
+
+.courseLogo{
+    width:120px;
+}
+
+.courseBack{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    color:#5b2a2e;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.courseHero{
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:70px;
+
+    padding:100px 7%;
+}
+
+.courseHeroText h1{
+
+    font-size:clamp(42px,5vw,72px);
+
+    line-height:1.1;
+
+    margin:20px 0;
+}
+
+.courseHeroText p{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#6c5a58;
+
+    max-width:600px;
+
+    margin-bottom:40px;
+}
+
+.courseHeroImage{
+
+    display:flex;
+
+    justify-content:center;
+}
+
+.courseHeroImage img{
+
+    width:100%;
+
+    max-width:520px;
+
+    border-radius:30px;
+
+    object-fit:cover;
+
+    box-shadow:0 30px 60px rgba(0,0,0,.12);
+}
+
+/* ================================= */
+
+.courseSection{
+
+    padding:110px 7%;
+}
+
+.courseSection.alt{
+
+    background:#fff;
+}
+
+.sectionTitle{
+
+    text-align:center;
+
+    max-width:800px;
+
+    margin:0 auto 70px;
+}
+
+.sectionTitle h2{
+
+    font-size:clamp(34px,4vw,54px);
+
+    margin-top:15px;
+}
+
+/* ================================= */
+
+.benefitsGrid,
+.learnGrid,
+.modulesGrid,
+.audienceGrid,
+.testimonialGrid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:28px;
+}
+
+/* ================================= */
+
+.benefitCard,
+.learnCard,
+.moduleCard,
+.audienceCard,
+.testimonialCard{
+
+    background:white;
+
+    padding:32px;
+
+    border-radius:24px;
+
+    transition:.35s;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+    border:1px solid rgba(0,0,0,.05);
+}
+
+.benefitCard:hover,
+.learnCard:hover,
+.moduleCard:hover,
+.audienceCard:hover,
+.testimonialCard:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 50px rgba(0,0,0,.10);
+}
+
+/* ================================= */
+
+.learnCard,
+.audienceCard{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+}
+
+.learnCard svg,
+.audienceCard svg{
+
+    color:#8c5b49;
+}
+
+/* ================================= */
+
+.moduleNumber{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#5b2a2e;
+
+    color:white;
+
+    margin-bottom:20px;
+
+    font-weight:bold;
+}
+
+/* ================================= */
+
+.aboutTeacher{
+
+    display:grid;
+
+    grid-template-columns:420px 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+    padding:120px 7%;
+
+    background:#fff;
+}
+
+.teacherImage img{
+
+    width:100%;
+
+    border-radius:28px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
+}
+
+.teacherContent h2{
+
+    font-size:48px;
+
+    margin:20px 0;
+}
+
+.teacherContent p{
+
+    line-height:1.9;
+
+    margin-bottom:18px;
+
+    color:#6a5a57;
+}
+
+/* ================================= */
+
+.testimonialCard{
+
+    text-align:center;
+}
+
+.testimonialCard strong{
+
+    display:block;
+
+    margin-top:18px;
+}
+
+/* ================================= */
+
+.courseCTA{
+
+    padding:130px 7%;
+
+    text-align:center;
+
+    background:#4b2925;
+
+    color:white;
+}
+
+.courseCTA h2{
+
+    font-size:clamp(42px,5vw,70px);
+
+    margin:20px 0;
+}
+
+.courseCTA p{
+
+    max-width:650px;
+
+    margin:0 auto 40px;
+
+    line-height:1.8;
+
+    color:#f2e7df;
+}
+
+/* ================================= */
+
+.floatingWhatsapp{
+
+    position:fixed;
+
+    bottom:35px;
+
+    right:35px;
+
+    width:68px;
+
+    height:68px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#25D366;
+
+    color:white;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.20);
+
+    z-index:999;
+
+    transition:.3s;
+}
+
+.floatingWhatsapp:hover{
+
+    transform:scale(1.1);
+}
+
+/* ================================= */
+
+.courseNotFound{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+    gap:25px;
+}
+
+/* ================================= */
+
+@media(max-width:950px){
+
+    .courseHero{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+    }
+
+    .courseHeroImage{
+
+        order:-1;
+    }
+
+    .aboutTeacher{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .courseHeader{
+
+        padding:18px 6%;
+    }
+
+    .courseLogo{
+
+        width:90px;
+    }
+
+    .courseHero{
+
+        padding:70px 6%;
+    }
+
+    .courseSection{
+
+        padding:80px 6%;
+    }
+
+    .aboutTeacher{
+
+        padding:80px 6%;
+    }
+
+    .courseCTA{
+
+        padding:90px 6%;
+    }
+
 }

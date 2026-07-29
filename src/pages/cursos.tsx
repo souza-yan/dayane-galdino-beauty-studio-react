@@ -1,38 +1,13 @@
 import { ArrowLeft, ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const courses = [
-  {
-    id: 1,
-    category: 'CURSO ONLINE',
-    title: 'Automaquiagem',
-    description:
-      'Aprenda técnicas práticas para valorizar sua beleza e criar uma maquiagem incrível para diferentes ocasiões.',
-    image: '/images/dayanemake.jpeg',
-  },
-  {
-    id: 2,
-    category: 'CURSO ONLINE',
-    title: 'Maquiagem Profissional',
-    description:
-      'Aprimore seus conhecimentos, desenvolva suas técnicas e descubra novos caminhos para evoluir na maquiagem.',
-    image: '/images/dayanecomputador.jpeg',
-  },
-  {
-    id: 3,
-    category: 'CURSO ONLINE',
-    title: 'Beleza e Imagem',
-    description:
-      'Descubra como valorizar sua imagem, desenvolver sua autoestima e encontrar um estilo que represente quem você é.',
-    image: '/images/dayanepose.PNG',
-  },
-];
+import { courses } from '../data/courses';
 
 function Cursos() {
   return (
     <div className="coursesPage">
 
-        {/* LOGO CENTRALIZADA */}
+      {/* LOGO CENTRALIZADA */}
 
       <div className="coursesTopBar">
         <div className="coursesBackWrapper">
@@ -43,7 +18,7 @@ function Cursos() {
 
         <div className="coursesLogo">
           <img
-            src="/images/logo.png"
+            src="/src/assets/images/logo.png"
             alt="Dayane Galdino Beauty Studio"
           />
         </div>
@@ -137,18 +112,16 @@ function Cursos() {
                   </h3>
 
                   <p>
-                    {course.description}
+                    {course.shortDescription}
                   </p>
 
-                  <a
-                    href="https://hotmart.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    to={`/cursos/${course.slug}`}
                     className="courseButton"
                   >
-                    Conhecer curso
+                    Ver se é ideal para mim
                     <ArrowRight size={17} />
-                  </a>
+                  </Link>
 
                 </div>
 
