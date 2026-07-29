@@ -1,3 +1,7 @@
+import automaquilhagemImage from '../assets/images/dayanemake.jpeg';
+import maquiagemProfissionalImage from '../assets/images/dayanecomputador.jpeg';
+import belezaImagemImage from '../assets/images/dayanepose.PNG';
+
 export interface Course {
   id: number;
   slug: string;
@@ -35,7 +39,7 @@ export const courses: Course[] = [
 
     title: "Automaquiagem",
 
-    image: "/src/assets/images/dayanemake.jpeg",
+    image: automaquilhagemImage,
 
     shortDescription:
       "Aprenda técnicas práticas para valorizar sua beleza em qualquer ocasião.",
@@ -90,7 +94,7 @@ export const courses: Course[] = [
 
     title: "Maquiagem Profissional",
 
-    image: "/src/assets/images/dayanecomputador.jpeg",
+    image: maquiagemProfissionalImage,
 
     shortDescription:
       "Aprenda técnicas utilizadas por profissionais e eleve seu nível.",
@@ -144,7 +148,7 @@ export const courses: Course[] = [
 
     title: "Beleza e Imagem",
 
-    image: "/src/assets/images/dayanepose.PNG",
+    image: belezaImagemImage,
 
     shortDescription:
       "Desenvolva sua autoestima e descubra sua melhor versão.",

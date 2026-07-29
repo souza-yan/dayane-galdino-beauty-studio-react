@@ -1,6 +1,7 @@
 import { ArrowLeft, ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+import logoImage from '../assets/images/logo.png';
 import { courses } from '../data/courses';
 
 function Cursos() {
@@ -18,7 +19,7 @@ function Cursos() {
 
         <div className="coursesLogo">
           <img
-            src="/src/assets/images/logo.png"
+            src={logoImage}
             alt="Dayane Galdino Beauty Studio"
           />
         </div>

@@ -7,6 +7,8 @@ import {
   Sparkles
 } from "lucide-react";
 
+import logoImage from '../assets/images/logo.png';
+import teacherImage from '../assets/images/dayanepose.PNG';
 import { courses } from "../data/courses";
 
 function Curso() {
@@ -45,7 +47,7 @@ function Curso() {
         </Link>
 
         <img
-          src="/src/assets/images/logo.png"
+          src={logoImage}
           className="courseLogo"
           alt="Dayane Galdino Beauty Studio"
         />
@@ -278,7 +280,7 @@ function Curso() {
         <div className="teacherImage">
 
           <img
-            src="/src/assets/images/dayanepose.PNG"
+            src={teacherImage}
             alt="Dayane Galdino"
           />
 

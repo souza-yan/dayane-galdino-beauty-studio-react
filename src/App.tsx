@@ -11,13 +11,18 @@ import {
 } from 'lucide-react';
 
 import { links, navItems } from './data/content';
+import heroImage from './assets/images/dayanepose.PNG';
+import notebookImage from './assets/images/dayanecomputador.jpeg';
+import portraitImage from './assets/images/dayane.jpeg';
+import ctaImage from './assets/images/dayanemake.jpeg';
+import logoImage from './assets/images/dayaneperfil.PNG';
 
 const images = {
-  hero: '/src/assets/images/dayanepose.PNG',
-  notebook: '/src/assets/images/dayanecomputador.jpeg',
-  portrait: '/src/assets/images/dayane.jpeg',
-  cta: '/src/assets/images/dayanemake.jpeg',
-  logo: '/src/assets/images/dayaneperfil.PNG',
+  hero: heroImage,
+  notebook: notebookImage,
+  portrait: portraitImage,
+  cta: ctaImage,
+  logo: logoImage,
 };
 
 function App() {
