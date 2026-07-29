@@ -96,6 +96,51 @@ function Curso() {
 
       </section>
 
+      <section className="offerSection">
+        <div className="offerContent">
+          <div className="offerInfo">
+            <span className="eyebrow dark">OFERTA PREMIUM</span>
+            <h2>{course.title}</h2>
+            <p>{course.shortDescription}</p>
+
+            <ul className="offerList">
+              <li><Check size={18} /> Acesso imediato</li>
+              <li><Check size={18} /> Curso 100% online</li>
+              <li><Check size={18} /> Assista pelo celular ou computador</li>
+              <li><Check size={18} /> Atualizações futuras</li>
+              <li><Check size={18} /> Certificado disponível</li>
+            </ul>
+          </div>
+
+          <div className="offerCard">
+            <span className="offerBadge">OFERTA</span>
+            <h3>Comece hoje</h3>
+            <div className="offerPrice">
+              <span className="offerOldPrice">De: R$ 297,00</span>
+              <strong>Por apenas</strong>
+              <span className="offerNewPrice">R$ 147,00</span>
+            </div>
+            <p className="offerInstallments">ou em até 12x sem juros</p>
+
+            <a
+              href={course.hotmart}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="offerButton"
+            >
+              Quero garantir meu acesso
+              <ChevronRight size={18} />
+            </a>
+
+            <div className="offerFeatures">
+              <span>🔒 Pagamento seguro</span>
+              <span>⚡ Acesso imediato</span>
+              <span>💳 Ambiente protegido</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* MOTIVOS */}
 
       <section

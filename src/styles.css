@@ -540,7 +540,7 @@ em {
 }
 
 .card {
-  background: #faf7f3;
+  background: #ffffff;
 
   min-height: 380px;
 
@@ -563,18 +563,22 @@ em {
 .card.featured {
   padding: 0;
   overflow: hidden;
-  background: linear-gradient(135deg, #5b2a2e 0%, #7a3f43 100%);
-  color: #fff;
+  background: #ffffff;
+  color: #332326;
 }
 
 .card.featured .cardBody,
 .card.featured .tag,
 .card.featured .card a {
-  color: #fff;
+  color: #332326;
 }
 
 .card.featured .card a:hover {
-  color: #f5e6dc;
+  color: #9b765f;
+}
+
+#cursos.card {
+  background: #ffffff;
 }
 
 .cardImage {
@@ -2080,6 +2084,144 @@ em {
 
 /* ================================= */
 
+.offerSection{
+    padding:0 7% 80px;
+}
+
+.offerContent{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:28px;
+    align-items:center;
+    background:linear-gradient(135deg, rgba(255,255,255,0.96), rgba(232,217,204,0.95));
+    border:1px solid rgba(91,42,46,0.08);
+    border-radius:28px;
+    padding:34px;
+    box-shadow:0 18px 45px rgba(91,42,46,0.08);
+}
+
+.offerInfo h2{
+    font-size:clamp(28px,3vw,36px);
+    font-family:Georgia, serif;
+    font-weight:400;
+    margin:12px 0 12px;
+    color:#5b2a2e;
+}
+
+.offerInfo p{
+    margin:0 0 20px;
+    color:#705e5d;
+    line-height:1.8;
+}
+
+.offerList{
+    list-style:none;
+    padding:0;
+    margin:0;
+    display:grid;
+    gap:12px;
+}
+
+.offerList li{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#5b2a2e;
+    font-weight:600;
+}
+
+.offerCard{
+    background:#fffdfb;
+    border:1px solid rgba(91,42,46,0.12);
+    border-radius:24px;
+    padding:28px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    box-shadow:0 14px 34px rgba(91,42,46,0.06);
+    transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.offerCard:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 38px rgba(91,42,46,0.12);
+}
+
+.offerBadge{
+    align-self:flex-start;
+    background:#5b2a2e;
+    color:#fff;
+    padding:7px 11px;
+    border-radius:999px;
+    font-size:11px;
+    letter-spacing:.2em;
+}
+
+.offerCard h3{
+    margin:0;
+    font-family:Georgia, serif;
+    font-size:28px;
+    color:#5b2a2e;
+}
+
+.offerPrice{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+.offerOldPrice{
+    color:#9b765f;
+    text-decoration:line-through;
+}
+
+.offerPrice strong{
+    color:#705e5d;
+    font-size:14px;
+}
+
+.offerNewPrice{
+    font-size:36px;
+    font-weight:700;
+    color:#5b2a2e;
+}
+
+.offerInstallments{
+    margin:0;
+    color:#705e5d;
+    font-size:14px;
+}
+
+.offerButton{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:15px 18px;
+    border-radius:999px;
+    background:linear-gradient(135deg, #5b2a2e 0%, #7a3f43 100%);
+    color:#fff;
+    font-weight:600;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    box-shadow:0 10px 20px rgba(91,42,46,0.16);
+    text-decoration:none;
+}
+
+.offerButton:hover{
+    transform:translateY(-2px);
+    box-shadow:0 14px 24px rgba(91,42,46,0.2);
+    background:linear-gradient(135deg, #3f1c20 0%, #5b2a2e 100%);
+}
+
+.offerFeatures{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    font-size:13px;
+    color:#705e5d;
+    margin-top:4px;
+}
+
 .courseCTA{
 
     padding:130px 7%;
@@ -2214,6 +2356,19 @@ em {
     .aboutTeacher{
 
         padding:80px 6%;
+    }
+
+    .offerSection{
+        padding:0 6% 60px;
+    }
+
+    .offerContent{
+        grid-template-columns:1fr;
+        padding:24px;
+    }
+
+    .offerCard{
+        padding:24px;
     }
 
     .courseCTA{
