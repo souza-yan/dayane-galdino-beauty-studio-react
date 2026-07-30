@@ -1,7 +1,7 @@
 export const links = {
   whatsapp: 'https://wa.me/',
   hotmart: 'https://hotmart.com/',
-  shopee: 'https://shopee.com.br/',
+  shopee: 'https://collshp.com/dayane888399?share_channel_code=1&view=storefront',
   instagram: 'https://www.instagram.com/',
 };
 

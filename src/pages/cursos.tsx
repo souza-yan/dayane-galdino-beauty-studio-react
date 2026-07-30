@@ -1,29 +1,14 @@
-import { ArrowLeft, ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-import logoImage from '../assets/images/logo.png';
+import Header from '../components/Header';
 import { courses } from '../data/courses';
 
 function Cursos() {
   return (
     <div className="coursesPage">
 
-      {/* LOGO CENTRALIZADA */}
-
-      <div className="coursesTopBar">
-        <div className="coursesBackWrapper">
-          <Link to="/" className="coursesBackLink" aria-label="Voltar para a página inicial">
-            <ArrowLeft size={22} />
-          </Link>
-        </div>
-
-        <div className="coursesLogo">
-          <img
-            src={logoImage}
-            alt="Dayane Galdino Beauty Studio"
-          />
-        </div>
-      </div>
+      <Header backTo="/" backLabel="Home" backAriaLabel="Voltar para a página inicial" />
 
 
       <main>

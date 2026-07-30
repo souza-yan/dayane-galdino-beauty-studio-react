@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import App from './App';
 import CursosPage from './pages/cursos';
 import Curso from './pages/curso';
+import AtendimentoPage from './pages/Atendimento';
 import './styles.css';
 
 function AppRoutes() {
@@ -26,6 +27,7 @@ function AppRoutes() {
     <div className={`pageTransition ${direction === 'forward' ? 'pageTransitionForward' : 'pageTransitionBackward'}`}>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/atendimento" element={<AtendimentoPage />} />
         <Route path="/cursos" element={<CursosPage />} />
         <Route path="/cursos/:slug" element={<Curso />} />
       </Routes>

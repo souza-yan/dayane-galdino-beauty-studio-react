@@ -189,6 +189,6 @@ export const courses: Course[] = [
       "Plano de evolução"
     ],
 
-    hotmart: "https://hotmart.com/"
+    hotmart: "https://hotmart.com/" 
   }
 ];

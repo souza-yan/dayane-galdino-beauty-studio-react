@@ -292,14 +292,10 @@ function App() {
                 valorizar seus traços e destacar sua beleza.
               </p>
 
-              <a
-                href={links.whatsapp}
-                target="_blank"
-                rel="noreferrer"
-              >
+              <Link to="/atendimento">
                 Agendar atendimento
                 <ArrowRight size={16} />
-              </a>
+              </Link>
 
             </article>
 

@@ -1,13 +1,12 @@
 import { Link, useParams } from "react-router-dom";
 import {
-  ArrowLeft,
   Check,
   ChevronRight,
   MessageCircle,
   Sparkles
 } from "lucide-react";
 
-import logoImage from '../assets/images/logo.png';
+import Header from '../components/Header';
 import teacherImage from '../assets/images/dayanepose.PNG';
 import { courses } from "../data/courses";
 
@@ -33,26 +32,7 @@ function Curso() {
   return (
     <div className="coursePage">
 
-      {/* HEADER */}
-
-      <header className="courseHeader">
-
-        <Link
-          to="/cursos"
-          className="courseBack"
-        >
-          <ArrowLeft size={18} />
-
-          Voltar
-        </Link>
-
-        <img
-          src={logoImage}
-          className="courseLogo"
-          alt="Dayane Galdino Beauty Studio"
-        />
-
-      </header>
+      <Header backTo="/cursos" backLabel="Cursos" backAriaLabel="Voltar para a página de cursos" />
 
       {/* HERO */}
 
