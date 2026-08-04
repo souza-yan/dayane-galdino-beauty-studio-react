@@ -1,19 +1,38 @@
+import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import {
   Check,
   ChevronRight,
-  MessageCircle,
-  Sparkles
 } from "lucide-react";
 
 import Header from '../components/Header';
-import teacherImage from '../assets/images/dayanepose.PNG';
 import { courses } from "../data/courses";
 
 function Curso() {
   const { slug } = useParams();
 
   const course = courses.find((item) => item.slug === slug);
+
+  useEffect(() => {
+    const items = Array.from(document.querySelectorAll<HTMLDivElement>('.revealItem'));
+    if (!items.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    items.forEach((item) => observer.observe(item));
+
+    return () => observer.disconnect();
+  }, []);
 
   if (!course) {
     return (
@@ -35,66 +54,114 @@ function Curso() {
       <Header backTo="/cursos" backLabel="Cursos" backAriaLabel="Voltar para a página de cursos" />
 
       {/* HERO */}
-
       <section className="courseHero">
+        <div
+          className="courseHeroImage"
+          style={{ backgroundImage: `url(${course.image})` }}
+        />
+
+        <div className="courseHeroOverlay" />
 
         <div className="courseHeroText">
-
-          <span className="eyebrow dark">
-            {course.category}
-          </span>
-
-          <h1>
-            {course.heroTitle}
-          </h1>
-
-          <p>
-            {course.heroDescription}
-          </p>
-
+          <span className="eyebrow dark">{course.category}</span>
+          <h1>{course.title}</h1>
+          <p>{course.heroDescription}</p>
           <div className="courseHeroActions">
-            <a
-              href="#beneficios"
-              className="button"
-            >
-              Descobrir se é ideal para mim
-
+            <a href="#offer" className="button primary">
+              Obter acesso
               <ChevronRight size={18} />
             </a>
           </div>
-
         </div>
-
-        <div className="courseHeroImage">
-
-          <img
-            src={course.image}
-            alt={course.title}
-          />
-
-        </div>
-
       </section>
 
-      <section className="offerSection">
-        <div className="offerContent">
-          <div className="offerInfo">
-            <span className="eyebrow dark">OFERTA PREMIUM</span>
-            <h2>{course.title}</h2>
-            <p>{course.shortDescription}</p>
+      <section className="courseSection">
+        <div className="sectionTitle">
+          <span className="eyebrow dark">PARA QUEM É ESTE CURSO</span>
+          <h2>{course.audienceTitle}</h2>
+        </div>
 
-            <ul className="offerList">
-              <li><Check size={18} /> Acesso imediato</li>
-              <li><Check size={18} /> Curso 100% online</li>
-              <li><Check size={18} /> Assista pelo celular ou computador</li>
-              <li><Check size={18} /> Atualizações futuras</li>
-              <li><Check size={18} /> Certificado disponível</li>
-            </ul>
+        <div className="courseAudienceText">
+          {course.audienceDescription.split('\n\n').map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
+        </div>
+      </section>
+
+      <section className="courseSection gallerySection">
+        <div className="sectionTitle">
+        </div>
+
+        <div className="galleryList">
+          {course.galleryImages.map((src, index) => (
+            <div key={index} className="galleryItem revealItem">
+              <img src={src} alt={`${course.title} ${index + 1}`} />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="courseSection alt materialsSection">
+        <div className="sectionTitle">
+          <span className="eyebrow dark">MATERIAIS EXCLUSIVOS</span>
+          <h2>Recursos preparados para apoiar sua prática.</h2>
+        </div>
+
+        <div className="materialsGrid">
+          <article className="materialCard revealItem">
+            <div className="materialIcon">
+              <Check size={20} />
+            </div>
+            <h3>Guia rápido</h3>
+            <p>Resumo prático com as principais técnicas para revisar sempre.</p>
+          </article>
+
+          <article className="materialCard revealItem">
+            <div className="materialIcon">
+              <Check size={20} />
+            </div>
+            <h3>Acesso direto</h3>
+            <p>Conteúdo organizado para você estudar no seu ritmo e sem enrolação.</p>
+          </article>
+
+          <article className="materialCard revealItem">
+            <div className="materialIcon">
+              <Check size={20} />
+            </div>
+            <h3>Suporte incluso</h3>
+            <p>Orientação e apoio para transformar o aprendizado em prática real.</p>
+          </article>
+        </div>
+      </section>
+
+      <section className="courseSection courseDifference">
+        <div className="sectionTitle">
+          <span className="eyebrow dark">POR QUE ESTE CURSO É DIFERENTE?</span>
+          <h2>Diferenciais pensados para quem busca resultados reais.</h2>
+        </div>
+
+        <ul className="differenceList revealItem">
+          {course.why.slice(0, 3).map((item) => (
+            <li key={item} className="differenceItem">
+              <Check size={20} />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section id="offer" className="offerSection">
+        <div className="offerContent finalOfferContent">
+          <div className="finalOfferImage revealItem">
+            <img src={course.finalImage} alt="Imagem final do curso" />
           </div>
 
-          <div className="offerCard">
-            <span className="offerBadge">OFERTA</span>
-            <h3>Comece hoje</h3>
+          <div className="offerCard finalOfferCard revealItem">
+            <span className="offerBadge">MELHOR OFERTA</span>
+            <span className="eyebrow dark">OFERTA PREMIUM</span>
+            <h3>{course.title}</h3>
+            <p>{course.shortDescription}</p>
+
             <div className="offerPrice">
               <span className="offerOldPrice">De: R$ 297,00</span>
               <strong>Por apenas</strong>
@@ -102,13 +169,26 @@ function Curso() {
             </div>
             <p className="offerInstallments">ou em até 12x sem juros</p>
 
+            <ul className="purchaseList">
+              {[
+                'Acesso imediato pelo Hotmart',
+                'Pagamento seguro e protegido',
+                'Material atualizado e suporte',
+              ].map((benefit) => (
+                <li key={benefit}>
+                  <Check size={18} />
+                  <span>{benefit}</span>
+                </li>
+              ))}
+            </ul>
+
             <a
               href={course.hotmart}
               target="_blank"
               rel="noopener noreferrer"
               className="offerButton"
             >
-              Quero garantir meu acesso
+              Acessar Hotmart
               <ChevronRight size={18} />
             </a>
 
@@ -120,375 +200,8 @@ function Curso() {
           </div>
         </div>
       </section>
-
-      {/* MOTIVOS */}
-
-      <section
-        id="beneficios"
-        className="courseSection"
-      >
-
-        <div className="sectionTitle">
-
-          <span className="eyebrow dark">
-
-            POR QUE ESTE CURSO?
-
-          </span>
-
-          <h2>
-
-            Você se identifica com alguma destas situações?
-
-          </h2>
-
-        </div>
-
-        <div className="benefitsGrid">
-
-          {course.why.map((item) => (
-
-            <div
-              key={item}
-              className="benefitCard"
-            >
-
-              <Sparkles size={22} />
-
-              <p>
-
-                {item}
-
-              </p>
-
-            </div>
-
-          ))}
-
-        </div>
-
-      </section>
-
-      {/* O QUE VAI APRENDER */}
-
-      <section className="courseSection alt">
-
-        <div className="sectionTitle">
-
-          <span className="eyebrow dark">
-
-            O QUE VOCÊ VAI APRENDER
-
-          </span>
-
-          <h2>
-
-            Conteúdo pensado para gerar resultados reais.
-
-          </h2>
-
-        </div>
-
-        <div className="learnGrid">
-
-          {course.learn.map((item) => (
-
-            <div
-              key={item}
-              className="learnCard"
-            >
-
-              <Check size={18} />
-
-              <span>
-
-                {item}
-
-              </span>
-
-            </div>
-
-          ))}
-
-        </div>
-
-      </section>    
-
-        {/* MÓDULOS */}
-
-      <section className="courseSection">
-
-        <div className="sectionTitle">
-
-          <span className="eyebrow dark">
-            CONTEÚDO DO CURSO
-          </span>
-
-          <h2>
-            Tudo o que você terá acesso.
-          </h2>
-
-        </div>
-
-        <div className="modulesGrid">
-
-          {course.modules.map((module, index) => (
-
-            <div
-              key={module}
-              className="moduleCard"
-            >
-
-              <span className="moduleNumber">
-                {(index + 1).toString().padStart(2, "0")}
-              </span>
-
-              <h3>{module}</h3>
-
-            </div>
-
-          ))}
-
-        </div>
-
-      </section>
-
-
-
-      {/* PARA QUEM É */}
-
-      <section className="courseSection alt">
-
-        <div className="sectionTitle">
-
-          <span className="eyebrow dark">
-
-            ESTE CURSO É PARA VOCÊ
-
-          </span>
-
-          <h2>
-
-            Se você deseja evoluir na maquiagem.
-
-          </h2>
-
-        </div>
-
-        <div className="audienceGrid">
-
-          {course.audience.map((item) => (
-
-            <div
-              key={item}
-              className="audienceCard"
-            >
-
-              <Check size={18} />
-
-              <span>{item}</span>
-
-            </div>
-
-          ))}
-
-        </div>
-
-      </section>
-
-
-
-      {/* SOBRE A DAYANE */}
-
-      <section className="aboutTeacher">
-
-        <div className="teacherImage">
-
-          <img
-            src={teacherImage}
-            alt="Dayane Galdino"
-          />
-
-        </div>
-
-        <div className="teacherContent">
-
-          <span className="eyebrow dark">
-
-            SUA PROFESSORA
-
-          </span>
-
-          <h2>
-
-            Aprenda com quem vive a maquiagem diariamente.
-
-          </h2>
-
-          <p>
-
-            Meu objetivo é mostrar que qualquer mulher pode
-            aprender maquiagem de forma simples, elegante e
-            prática.
-
-          </p>
-
-          <p>
-
-            Desenvolvi este método para ensinar exatamente aquilo
-            que aplico no meu dia a dia com clientes reais.
-
-          </p>
-
-        </div>
-
-      </section>
-
-
-
-      {/* DEPOIMENTOS */}
-
-      <section className="courseSection">
-
-        <div className="sectionTitle">
-
-          <span className="eyebrow dark">
-
-            RESULTADOS
-
-          </span>
-
-          <h2>
-
-            O que nossas alunas dizem.
-
-          </h2>
-
-        </div>
-
-        <div className="testimonialGrid">
-
-          <article className="testimonialCard">
-
-            ⭐⭐⭐⭐⭐
-
-            <p>
-
-              "Foi muito além do que eu esperava.
-              Finalmente consegui fazer minha maquiagem sozinha."
-
-            </p>
-
-            <strong>Ana Paula</strong>
-
-          </article>
-
-
-
-          <article className="testimonialCard">
-
-            ⭐⭐⭐⭐⭐
-
-            <p>
-
-              "A explicação é simples e muito fácil de acompanhar."
-
-            </p>
-
-            <strong>Camila</strong>
-
-          </article>
-
-
-
-          <article className="testimonialCard">
-
-            ⭐⭐⭐⭐⭐
-
-            <p>
-
-              "Hoje consigo atender clientes com muito mais segurança."
-
-            </p>
-
-            <strong>Juliana</strong>
-
-          </article>
-
-        </div>
-
-      </section>
-
-
-
-      {/* CTA FINAL */}
-
-      <section className="courseCTA">
-
-        <span className="eyebrow">
-
-          SUA TRANSFORMAÇÃO COMEÇA AGORA
-
-        </span>
-
-        <h2>
-
-          Está pronta para dar o próximo passo?
-
-        </h2>
-
-        <p>
-
-          Se este curso fizer sentido para você, clique abaixo para acessar o conteúdo completo e começar sua transformação.
-
-        </p>
-
-        <a
-
-          href={course.hotmart}
-
-          target="_blank"
-
-          rel="noopener noreferrer"
-
-          className="button"
-
-        >
-
-          Quero comprar este curso
-
-          <ChevronRight size={18} />
-
-        </a>
-
-      </section>
-
-
-
-      {/* WHATSAPP */}
-
-      <a
-
-        href="https://wa.me/"
-
-        target="_blank"
-
-        rel="noopener noreferrer"
-
-        className="floatingWhatsapp"
-
-      >
-
-        <MessageCircle size={28} />
-
-      </a>
-
-
-
     </div>
-
   );
-
 }
 
 export default Curso;

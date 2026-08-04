@@ -15,7 +15,7 @@ import heroImage from './assets/images/dayanepose.PNG';
 import notebookImage from './assets/images/dayanecomputador.jpeg';
 import portraitImage from './assets/images/dayane.jpeg';
 import ctaImage from './assets/images/dayanemake.jpeg';
-import logoImage from './assets/images/dayaneperfil.PNG';
+import logoImage from './assets/images/logo.png';
 
 const images = {
   hero: heroImage,
@@ -80,10 +80,6 @@ function App() {
             className="logo"
           />
 
-          <span className="logoText">
-            <strong>DAYANE GALDINO</strong>
-            <small>BEAUTY STUDIO</small>
-          </span>
         </a>
 
         <nav className={`nav ${menuOpen ? 'open' : ''}`}>
@@ -108,15 +104,6 @@ function App() {
               </a>
             );
           })}
-
-          <a
-            className="navCta"
-            href={links.whatsapp}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Fale comigo
-          </a>
 
         </nav>
 
@@ -148,10 +135,6 @@ function App() {
 
           <div className="heroContent">
 
-            <span className="eyebrow">
-              BEAUTY • EDUCAÇÃO • TRANSFORMAÇÃO
-            </span>
-
             <h1>
               Realce a sua beleza.
               <br />
@@ -163,32 +146,9 @@ function App() {
               confiante, bonita e preparada para transformar sua imagem.
             </p>
 
-            <div className="heroActions">
-
-              <a
-                className="button primary"
-                href="#atendimento"
-              >
-                Conheça meu trabalho
-                <ArrowRight size={18} />
-              </a>
-
-              <a
-                className="button ghost"
-                href={links.whatsapp}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <MessageCircle size={18} />
-                Fale comigo
-              </a>
-
-            </div>
-
           </div>
 
         </section>
-
 
         {/* SOBRE */}
 
@@ -216,22 +176,27 @@ function App() {
             </span>
 
             <h2>
-              Mais do que beleza,
+              Mais do que maquiagem,
               <br />
-              <em>uma experiência.</em>
+              <em>uma experiência para a sua noiva.</em>
             </h2>
 
             <p>
-              Meu propósito é ajudar cada mulher a reconhecer
-              sua própria beleza e se sentir segura para expressá-la.
-              Aqui, cada detalhe é pensado para unir técnica,
-              cuidado e autoestima.
+              Sou Dayane Galdino, maquiadora profissional há 8 anos e
+              especialista em noivas. Minha missão é realçar a beleza
+              natural de cada mulher em um dos dias mais importantes
+              da sua vida, com dedicação, sensibilidade e cuidado em
+              cada detalhe.
             </p>
 
             <p>
-              Conheça meus serviços, conteúdos e produtos e encontre
-              a experiência que mais combina com você.
+              Trabalho com produtos de alta qualidade e técnicas
+              atualizadas, unindo durabilidade e naturalidade para que
+              a noiva se sinta confortável e deslumbrante do início ao
+              fim da celebração — seja um estilo clássico, romântico,
+              moderno ou glamouroso.
             </p>
+
 
             <a
               className="textLink"
@@ -243,351 +208,296 @@ function App() {
               <ArrowRight size={17} />
             </a>
 
-          </div>
+        </div>
 
-        </section>
+      </section>
 
 
-        {/* ATENDIMENTO */}
+      {/* ATENDIMENTO */}
 
-        <section
-          id="atendimento"
-          className="services section"
-        >
+      <section
+        id="atendimento"
+        className="services section"
+      >
 
-          <div className="sectionHeading">
+        <div className="sectionHeading">
 
-            <span className="eyebrow dark">
-              ATENDIMENTO
-            </span>
+          <span className="eyebrow dark">
+            ATENDIMENTO
+          </span>
 
-            <h2>
-              Beleza pensada para <em>você</em>
-            </h2>
-
-            <p>
-              Escolha a experiência que deseja viver
-              e entre em contato para saber mais.
-            </p>
-
-          </div>
-
-
-          <div className="cards">
-
-            {/* CARD ATENDIMENTO */}
-
-            <article className="card">
-
-              <div className="cardIcon">
-                <Sparkles />
-              </div>
-
-              <h3>
-                Atendimento
-              </h3>
-
-              <p>
-                Um atendimento personalizado, pensado para
-                valorizar seus traços e destacar sua beleza.
-              </p>
-
-              <Link to="/atendimento">
-                Agendar atendimento
-                <ArrowRight size={16} />
-              </Link>
-
-            </article>
-
-
-            {/* CARD CURSOS */}
-
-            <article
-              id="cursos"
-              className="card featured"
-            >
-
-              <div className="cardImage">
-
-                <img
-                  src={images.notebook}
-                  alt="Cursos e conteúdos online"
-                />
-
-              </div>
-
-              <div className="cardBody">
-
-                <span className="tag">
-                  ONLINE
-                </span>
-
-                <h3>
-                  Cursos
-                </h3>
-
-                <p>
-                  Aprenda técnicas e descubra novos conhecimentos
-                  através dos meus cursos e conteúdos.
-                </p>
-
-                <Link to="/cursos">
-                  Conhecer cursos
-                  <ArrowRight size={16} />
-                </Link>
-
-              </div>
-
-            </article>
-
-
-            {/* CARD CONSULTORIA */}
-
-            <article
-              id="consultoria"
-              className="card"
-            >
-
-              <div className="cardIcon">
-                <MessageCircle />
-              </div>
-
-              <h3>
-                Consultoria
-              </h3>
-
-              <p>
-                Orientação personalizada para você encontrar
-                caminhos que façam sentido para sua beleza e imagem.
-              </p>
-
-              <a
-                href={links.whatsapp}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Quero saber mais
-                <ArrowRight size={16} />
-              </a>
-
-            </article>
-
-          </div>
-
-        </section>
-
-
-        {/* PRODUTOS */}
-
-        <section
-          id="produtos"
-          className="products section"
-        >
-
-          <div className="productText">
-
-            <span className="eyebrow dark">
-              MINHA SELEÇÃO
-            </span>
-
-            <h2>
-              Produtos que fazem parte da
-              <em> minha rotina</em>
-            </h2>
-
-            <p>
-              Confira a seleção de produtos e itens que recomendo
-              para complementar sua experiência de beleza.
-            </p>
-
-            <a
-              className="button primary"
-              href={links.shopee}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <ShoppingBag size={18} />
-              Ver produtos na Shopee
-            </a>
-
-          </div>
-
-
-          <div className="productVisual">
-
-            <div className="productCircle">
-              <Sparkles size={34} />
-            </div>
-
-            <span>
-              BEAUTY
-              <br />
-              ESSENTIALS
-            </span>
-
-          </div>
-
-        </section>
-
-
-        {/* DEPOIMENTOS E FAQ */}
-
-        <section className="socialProof section">
-          <div className="sectionHeading">
-            <span className="eyebrow dark">CONFIANÇA E RESULTADOS</span>
-            <h2>
-              O que as pessoas sentem ao viver essa experiência
-            </h2>
-            <p>
-              Cada atendimento e curso é pensado para entregar mais segurança, beleza e clareza para o seu caminho.
-            </p>
-          </div>
-
-          <div className="proofGrid">
-            <article className="proofCard">
-              <p>“Senti muito mais segurança para me maquiar e transmitir minha imagem com confiança.”</p>
-              <strong>Ana P.</strong>
-            </article>
-            <article className="proofCard">
-              <p>“Os conteúdos me ajudaram a entender minha beleza de uma forma muito mais leve e bonita.”</p>
-              <strong>Camila R.</strong>
-            </article>
-            <article className="proofCard">
-              <p>“O atendimento foi acolhedor, profissional e me fez enxergar meu potencial.”</p>
-              <strong>Juliana M.</strong>
-            </article>
-          </div>
-
-          <div className="faqBox">
-            <h3>Perguntas frequentes</h3>
-            <div className="faqItem">
-              <strong>Os cursos são indicados para iniciantes?</strong>
-              <p>Sim. Os conteúdos foram pensados para quem está começando e para quem deseja evoluir.</p>
-            </div>
-            <div className="faqItem">
-              <strong>Posso entrar em contato antes de comprar?</strong>
-              <p>Claro. Você pode me chamar no WhatsApp para tirar dúvidas e receber orientação.</p>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA FINAL */}
-
-        <section className="finalCta section">
-
-          <img
-            src={images.cta}
-            alt=""
-          />
-
-          <div className="finalOverlay" />
-
-          <div className="finalContent">
-
-            <span className="eyebrow">
-              PRONTA PARA COMEÇAR?
-            </span>
-
-            <h2>
-              Vamos criar uma experiência
-              <br />
-              <em>especial para você.</em>
-            </h2>
-
-            <a
-              className="button light"
-              href={links.whatsapp}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Entrar em contato
-              <ArrowRight size={18} />
-            </a>
-
-          </div>
-
-        </section>
-
-      </main>
-
-
-      {/* FOOTER */}
-
-      <footer className="footer">
-
-        <div>
-
-          <div className="footerBrand">
-            DAYANE GALDINO
-            <span>
-              BEAUTY STUDIO
-            </span>
-          </div>
+          <h2>
+            Beleza pensada para <em>você</em>
+          </h2>
 
           <p>
-            Beleza, conhecimento e transformação.
+            Escolha a experiência que deseja viver
+            e entre em contato para saber mais.
           </p>
 
         </div>
 
 
-        <div className="footerLinks">
+        <div className="cards">
 
-          <a
-            href={links.instagram}
-            target="_blank"
-            rel="noreferrer"
+          {/* CARD ATENDIMENTO */}
+
+          <article className="card">
+
+            <div className="cardIcon">
+              <Sparkles />
+            </div>
+
+            <h3>
+              Atendimento
+            </h3>
+
+            <p>
+              Um atendimento personalizado, pensado para
+              valorizar seus traços e destacar sua beleza.
+            </p>
+
+            <Link to="/atendimento">
+              Agendar atendimento
+              <ArrowRight size={16} />
+            </Link>
+
+          </article>
+
+
+          {/* CARD CURSOS */}
+
+          <article
+            id="cursos"
+            className="card featured"
           >
-            <Globe size={18} />
-            Instagram
-          </a>
 
-          <a
-            href={links.whatsapp}
-            target="_blank"
-            rel="noreferrer"
+            <div className="cardImage">
+
+              <img
+                src={images.notebook}
+                alt="Cursos e conteúdos online"
+              />
+
+            </div>
+
+            <div className="cardBody">
+
+              <span className="tag">
+                ONLINE
+              </span>
+
+              <h3>
+                Cursos
+              </h3>
+
+              <p>
+                Aprenda técnicas e descubra novos conhecimentos
+                através dos meus cursos e conteúdos.
+              </p>
+
+              <Link to="/cursos">
+                Conhecer cursos
+                <ArrowRight size={16} />
+              </Link>
+
+            </div>
+
+          </article>
+
+
+          {/* CARD CURSOS PRESENCIAIS */}
+
+          <article
+            id="cursos-presenciais"
+            className="card"
           >
-            <MessageCircle size={18} />
-            WhatsApp
-          </a>
+
+            <div className="cardIcon">
+              <MessageCircle />
+            </div>
+
+            <h3>
+              Cursos Presenciais
+            </h3>
+
+            <p>
+              Aprenda técnicas ao vivo com acompanhamento profissional
+              em um ambiente criado para o seu desenvolvimento.
+            </p>
+
+            <a
+              href={links.whatsapp}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Quero saber mais
+              <ArrowRight size={16} />
+            </a>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      {/* PRODUTOS */}
+
+      <section
+        id="produtos"
+        className="products section"
+      >
+
+        <div className="productText">
+
+          <span className="eyebrow dark">
+            MINHA SELEÇÃO
+          </span>
+
+          <h2>
+            Produtos que fazem parte da
+            <em> minha rotina</em>
+          </h2>
+
+          <p>
+            Confira a seleção de produtos e itens que recomendo
+            para complementar sua experiência de beleza.
+          </p>
 
           <a
+            className="button primary"
             href={links.shopee}
             target="_blank"
             rel="noreferrer"
           >
             <ShoppingBag size={18} />
-            Shopee
+            Ver produtos na Shopee
           </a>
 
         </div>
 
 
-        <div className="copyright">
+        <div className="productVisual">
 
-          © {new Date().getFullYear()}
-          {' '}
-          Dayane Galdino Beauty Studio.
-          Todos os direitos reservados.
+          <div className="productCircle">
+            <Sparkles size={34} />
+          </div>
+
+          <span>
+            BEAUTY
+            <br />
+            ESSENTIALS
+          </span>
 
         </div>
 
-      </footer>
+      </section>
+
+      {/* CTA FINAL */}
+
+      <section className="finalCta section">
+
+        <img
+          src={images.cta}
+          alt=""
+        />
+
+        <div className="finalOverlay" />
+
+        <div className="finalContent">
+
+          <span className="eyebrow">
+            PRONTA PARA COMEÇAR?
+          </span>
+
+          <h2>
+            Vamos criar uma experiência
+            <br />
+            <em>especial para você.</em>
+          </h2>
+
+          <a
+            className="button light"
+            href={links.whatsapp}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Entrar em contato
+            <ArrowRight size={18} />
+          </a>
+
+        </div>
+
+      </section>
+
+    </main>
 
 
-      {/* BOTÃO WHATSAPP */}
+      {/* FOOTER */ }
+
+  <footer className="footer">
+
+    <div>
+
+      <div className="footerBrand">
+        DAYANE GALDINO
+        <span>
+          BEAUTY STUDIO
+        </span>
+      </div>
+
+      <p>
+        Beleza, conhecimento e transformação.
+      </p>
+
+    </div>
+
+
+    <div className="footerLinks">
 
       <a
-        className="floatingWhatsapp"
+        href={links.instagram}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Globe size={18} />
+        Instagram
+      </a>
+
+      <a
         href={links.whatsapp}
         target="_blank"
         rel="noreferrer"
-        aria-label="WhatsApp"
       >
-        <MessageCircle />
+        <MessageCircle size={18} />
+        WhatsApp
+      </a>
+
+      <a
+        href={links.shopee}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <ShoppingBag size={18} />
+        Shopee
       </a>
 
     </div>
+
+
+    <div className="copyright">
+
+      © {new Date().getFullYear()}
+      {' '}
+      Dayane Galdino Beauty Studio.
+      Todos os direitos reservados.
+
+    </div>
+
+  </footer>
+
+    </div >
   );
 }
 

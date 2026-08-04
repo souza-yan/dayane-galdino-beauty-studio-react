@@ -5,7 +5,6 @@ import {
   Crown,
   HeartHandshake,
   Sparkles,
-  Star,
 } from 'lucide-react';
 import heroImage from '../assets/images/dayanepose.PNG';
 import aboutImage from '../assets/images/dayane.jpeg';
@@ -49,21 +48,6 @@ const specialties = [
   'Produções para Eventos',
 ];
 
-const testimonials = [
-  {
-    quote: 'O atendimento foi impecável, acolhedor e transformador. Senti uma verdadeira experiência premium.',
-    name: 'Marina A.',
-  },
-  {
-    quote: 'A maquiagem ficou linda, elegante e impecável para o meu grande dia. Super recomendo.',
-    name: 'Carolina S.',
-  },
-  {
-    quote: 'Cada detalhe foi pensado com excelência. A confiança que senti foi única.',
-    name: 'Beatriz M.',
-  },
-];
-
 const casamentosUrl = 'https://m.casamentos.com.br/beleza-noivas/dayane-galdino-beauty--e224406';
 
 function Atendimento() {
@@ -87,16 +71,6 @@ function Atendimento() {
               valorizar seus traços e deixar sua presença ainda mais memorável.
             </p>
 
-            <div className="heroActions">
-              <a className="button primary" href={casamentosUrl} target="_blank" rel="noopener noreferrer">
-                Agendar atendimento
-                <ArrowRight size={18} />
-              </a>
-
-              <a className="button ghost darkGhost" href="#sobre-dayane">
-                Conhecer mais
-              </a>
-            </div>
           </div>
 
           <div className="atendimentoHeroVisual">
@@ -221,31 +195,6 @@ function Atendimento() {
                 alt="Wedding Awards 2026"
               />
             </a>
-          </div>
-        </section>
-
-        <section className="atendimentoSection testimonialsSection">
-          <div className="sectionHeading">
-            <span className="eyebrow dark">AVALIAÇÕES</span>
-            <h2>
-              Depoimentos que revelam
-              <br />
-              <em>o impacto do atendimento.</em>
-            </h2>
-          </div>
-
-          <div className="testimonialsGrid">
-            {testimonials.map((testimonial) => (
-              <article className="testimonialCard" key={testimonial.name}>
-                <div className="testimonialStars">
-                  {[0, 1, 2, 3, 4].map((star) => (
-                    <Star key={star} size={16} fill="currentColor" />
-                  ))}
-                </div>
-                <p>“{testimonial.quote}”</p>
-                <strong>{testimonial.name}</strong>
-              </article>
-            ))}
           </div>
         </section>
 

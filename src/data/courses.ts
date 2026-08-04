@@ -20,11 +20,19 @@ export interface Course {
 
   why: string[];
 
-  learn: string[];
+  audienceTitle: string;
 
-  audience: string[];
+  audienceDescription: string;
 
-  modules: string[];
+  galleryImages: string[];
+
+  materials: {
+    title: string;
+    description: string;
+    image: string;
+  }[];
+
+  finalImage: string;
 
   hotmart: string;
 }
@@ -57,30 +65,31 @@ export const courses: Course[] = [
       "Quer economizar aprendendo a fazer sua própria maquiagem."
     ],
 
-    learn: [
-      "Preparação correta da pele",
-      "Como escolher os produtos ideais",
-      "Esfumado profissional",
-      "Contorno e iluminação",
-      "Maquiagem para eventos",
-      "Finalização perfeita"
+    galleryImages: [automaquilhagemImage, maquiagemProfissionalImage, belezaImagemImage],
+
+    materials: [
+      {
+        title: 'Guia exclusivo',
+        description: 'Materiais práticos para revisar cada técnica sempre que precisar.',
+        image: maquiagemProfissionalImage,
+      },
+      {
+        title: 'Acesso VIP',
+        description: 'Receba conteúdos complementares e atualizações direto na sua rotina.',
+        image: automaquilhagemImage,
+      },
+      {
+        title: 'Bônus especial',
+        description: 'Ferramentas e dicas para deixar sua maquiagem ainda mais profissional.',
+        image: belezaImagemImage,
+      },
     ],
 
-    audience: [
-      "Iniciantes",
-      "Quem deseja aprender do zero",
-      "Quem ama maquiagem",
-      "Quem quer economizar com maquiagem profissional"
-    ],
+    finalImage: maquiagemProfissionalImage,
 
-    modules: [
-      "Boas-vindas",
-      "Preparação da pele",
-      "Correções",
-      "Olhos",
-      "Lábios",
-      "Maquiagem completa"
-    ],
+    audienceTitle: "Perfeito para quem quer aprender maquiagem prática e transformar sua rotina.",
+
+    audienceDescription: "Este curso é ideal para quem deseja dominar a automaquiagem com técnicas claras e eficientes. Você aprenderá a escolher os produtos certos, aplicar cada etapa com confiança e criar looks que realcem sua beleza natural.\n\nSe você quer economizar tempo, reduzir erros e se sentir preparada para qualquer ocasião, este é o curso certo.",
 
     hotmart: "https://hotmart.com/"
   },
@@ -92,12 +101,12 @@ export const courses: Course[] = [
 
     category: "CURSO ONLINE",
 
-    title: "Maquiagem Profissional",
+    title: "Pack de Noivas",
 
     image: maquiagemProfissionalImage,
 
     shortDescription:
-      "Aprenda técnicas utilizadas por profissionais e eleve seu nível.",
+      " Aprenda técnicas utilizadas por profissionais e eleve seu nível.",
 
     heroTitle:
       "Transforme sua paixão por maquiagem em uma habilidade profissional.",
@@ -112,29 +121,31 @@ export const courses: Course[] = [
       "Quer aumentar sua renda."
     ],
 
-    learn: [
-      "Colorimetria",
-      "Peles maduras",
-      "Noivas",
-      "Fotografia",
-      "Produtos profissionais",
-      "Atendimento ao cliente"
+    galleryImages: [maquiagemProfissionalImage, automaquilhagemImage, belezaImagemImage],
+
+    materials: [
+      {
+        title: 'Guia exclusivo',
+        description: 'Materiais práticos para revisar cada técnica sempre que precisar.',
+        image: automaquilhagemImage,
+      },
+      {
+        title: 'Acesso VIP',
+        description: 'Receba conteúdos complementares e atualizações direto na sua rotina.',
+        image: maquiagemProfissionalImage,
+      },
+      {
+        title: 'Bônus especial',
+        description: 'Ferramentas e dicas para deixar sua maquiagem ainda mais profissional.',
+        image: belezaImagemImage,
+      },
     ],
 
-    audience: [
-      "Maquiadores iniciantes",
-      "Profissionais",
-      "Quem deseja empreender"
-    ],
+    finalImage: belezaImagemImage,
 
-    modules: [
-      "Fundamentos",
-      "Colorimetria",
-      "Noivas",
-      "Peles negras",
-      "Peles maduras",
-      "Marketing"
-    ],
+    audienceTitle: "Ideal para maquiadoras que querem elevar o atendimento de noivas.",
+
+    audienceDescription: "Se você trabalha com maquiagem ou quer transformar sua paixão em profissão, este curso traz as bases para atender noivas com segurança e estilo. Aprenda a construir um processo organizado, entregar resultados consistentes e fidelizar clientes com looks sofisticados.",
 
     hotmart: "https://hotmart.com/"
   },
@@ -146,7 +157,7 @@ export const courses: Course[] = [
 
     category: "CURSO ONLINE",
 
-    title: "Beleza e Imagem",
+    title: "Método DG Beauty",
 
     image: belezaImagemImage,
 
@@ -165,30 +176,32 @@ export const courses: Course[] = [
       "Quer melhorar sua imagem pessoal."
     ],
 
-    learn: [
-      "Autoconhecimento",
-      "Imagem pessoal",
-      "Cores",
-      "Estilo",
-      "Confiança",
-      "Posicionamento"
+    galleryImages: [belezaImagemImage, automaquilhagemImage, maquiagemProfissionalImage],
+
+    materials: [
+      {
+        title: 'Guia exclusivo',
+        description: 'Materiais práticos para revisar cada técnica sempre que precisar.',
+        image: automaquilhagemImage,
+      },
+      {
+        title: 'Acesso VIP',
+        description: 'Receba conteúdos complementares e atualizações direto na sua rotina.',
+        image: maquiagemProfissionalImage,
+      },
+      {
+        title: 'Bônus especial',
+        description: 'Ferramentas e dicas para deixar sua maquiagem ainda mais profissional.',
+        image: belezaImagemImage,
+      },
     ],
 
-    audience: [
-      "Mulheres de todas as idades",
-      "Empreendedoras",
-      "Quem busca autoestima"
-    ],
+    finalImage: automaquilhagemImage,
 
-    modules: [
-      "Imagem",
-      "Estilo",
-      "Cores",
-      "Beleza",
-      "Autoestima",
-      "Plano de evolução"
-    ],
+    audienceTitle: "Para quem quer usar a maquiagem como ferramenta de imagem pessoal.",
 
-    hotmart: "https://hotmart.com/" 
+    audienceDescription: "Este curso foi desenhado para mulheres que desejam destacar sua beleza natural e transmitir mais confiança em todas as situações. Você vai descobrir como criar looks elegantes que reflitam sua identidade, sem complicação e com resultados duradouros.",
+
+    hotmart: "https://hotmart.com/"
   }
 ];
