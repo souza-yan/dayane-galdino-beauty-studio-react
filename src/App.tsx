@@ -134,16 +134,22 @@ function App() {
           <div className="heroOverlay" />
 
           <div className="heroContent">
-
+            <div className="heroIntroSpacer" />
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            
             <h1>
-              Realce a sua beleza.
+              Sua beleza merece ser inesquecível.
               <br />
               <em>Desperte sua melhor versão.</em>
             </h1>
 
             <p>
-              Um espaço pensado para você se sentir ainda mais
-              confiante, bonita e preparada para transformar sua imagem.
+              Cada detalhe é pensado para que você viva seu grande dia com
+              tranquilidade, segurança e a certeza de estar na sua melhor versão.
             </p>
 
           </div>
@@ -178,25 +184,24 @@ function App() {
             <h2>
               Mais do que maquiagem,
               <br />
-              <em>uma experiência para a sua noiva.</em>
+              <em>uma experiência que transforma.</em>
             </h2>
 
             <p>
-              Sou Dayane Galdino, maquiadora profissional há 8 anos e
-              especialista em noivas. Minha missão é realçar a beleza
-              natural de cada mulher em um dos dias mais importantes
-              da sua vida, com dedicação, sensibilidade e cuidado em
-              cada detalhe.
+              Sou Dayane Galdino, especialista em noivas e fundadora da Dayane Galdino Beauty.
+              Há mais de 8 anos acompanho mulheres em alguns dos momentos mais importantes de suas vidas,
+              criando uma beleza elegante, atemporal e personalizada.
             </p>
 
             <p>
-              Trabalho com produtos de alta qualidade e técnicas
-              atualizadas, unindo durabilidade e naturalidade para que
-              a noiva se sinta confortável e deslumbrante do início ao
-              fim da celebração — seja um estilo clássico, romântico,
-              moderno ou glamouroso.
+              Com a experiência adquirida ao longo dessa jornada, 
+              desenvolvi também materiais e treinamentos para ajudar outras maquiadoras
+              a se posicionarem de forma mais profissional, organizada e valorizada.
             </p>
 
+            <p>
+              Porque quando a experiência é premium, o valor percebido também é.
+            </p>
 
             <a
               className="textLink"

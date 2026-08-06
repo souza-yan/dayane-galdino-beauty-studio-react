@@ -1,4 +1,6 @@
 :root {
+  --font-titulo: 'Playfair Display', Georgia, serif;
+
   font-family:
     Inter,
     ui-sans-serif,
@@ -28,6 +30,15 @@ body {
   min-width: 320px;
   background: #f7f2ec;
   color: #332326;
+}
+
+h1,
+h2,
+h3,
+.eyebrow,
+.tagline,
+.frase-destaque {
+  font-family: var(--font-titulo);
 }
 
 ::selection {
@@ -286,6 +297,10 @@ main {
   padding: 90px 0;
 }
 
+.heroIntroSpacer {
+  height: clamp(72px, 8vw, 120px);
+}
+
 .eyebrow {
   font-size: 11px;
 
@@ -295,7 +310,7 @@ main {
 }
 
 .hero h1 {
-  font-family: Georgia, serif;
+  font-family: var(--font-titulo);
 
   font-weight: 400;
 
