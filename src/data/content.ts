@@ -2,7 +2,7 @@ export const links = {
   whatsapp: 'https://wa.me/',
   hotmart: 'https://hotmart.com/',
   shopee: 'https://collshp.com/dayane888399?share_channel_code=1&view=storefront',
-  instagram: 'https://www.instagram.com/',
+  instagram: 'https://www.instagram.com/dayanegaldinobeauty/',
 };
 
 export const navItems = [

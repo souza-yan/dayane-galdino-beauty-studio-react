@@ -135,16 +135,15 @@ function App() {
 
           <div className="heroContent">
             <div className="heroIntroSpacer" />
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+            
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             
             <h1>
               Sua beleza merece ser inesquecível.
               <br />
-              <em>Desperte sua melhor versão.</em>
             </h1>
 
             <p>

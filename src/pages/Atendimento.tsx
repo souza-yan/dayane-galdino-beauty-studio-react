@@ -48,7 +48,7 @@ const specialties = [
   'Produções para Eventos',
 ];
 
-const casamentosUrl = 'https://m.casamentos.com.br/beleza-noivas/dayane-galdino-beauty--e224406';
+const casamentosUrl = 'https://wa.me/';
 
 function Atendimento() {
   return (
@@ -104,29 +104,6 @@ function Atendimento() {
           </div>
         </section>
 
-        <section className="atendimentoSection timelineSection">
-          <div className="sectionHeading">
-            <span className="eyebrow dark">COMO FUNCIONA</span>
-            <h2>
-              Uma experiência guiada,
-              <br />
-              <em>do primeiro contato ao grande dia.</em>
-            </h2>
-          </div>
-
-          <div className="timeline">
-            {steps.map((step, index) => (
-              <div className="timelineWrap" key={step.title}>
-                <article className="timelineItem">
-                  <span className="timelineNumber">{step.number}</span>
-                  <h3>{step.title}</h3>
-                  <p>{step.text}</p>
-                </article>
-                {index < steps.length - 1 && <div className="timelineArrow">↓</div>}
-              </div>
-            ))}
-          </div>
-        </section>
 
         <section className="atendimentoSection">
           <div className="sectionHeading">
@@ -183,16 +160,46 @@ function Atendimento() {
               <em>uma experiência de alto padrão.</em>
             </h2>
             <p>
-              A profissional foi reconhecida com o prêmio Wedding Awards 2026 do Casamentos.com,
-              reforçando sua presença e excelência no universo de beleza para noivas.
+              A profissional foi reconhecida com os prêmios Wedding Awards 2024, 2025 e 2026 do
+              Casamentos.com, reforçando sua presença e excelência no universo de beleza para noivas.
             </p>
           </div>
 
           <div className="awardBadge">
-            <a href={casamentosUrl} target="_blank" rel="noopener noreferrer">
+            <a
+              href={casamentosUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Dayane Galdino Beauty, ganhador Casamentos Awards 2024 de Casamentos.com.br"
+            >
+              <img
+                src="https://cdn1.casamentos.com.br/img/badges/2024/badge-weddingawards_pt_BR.jpg"
+                alt="Dayane Galdino Beauty, ganhador Casamentos Awards 2024 de Casamentos.com.br"
+                loading="lazy"
+              />
+            </a>
+            <a
+              href={casamentosUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Dayane Galdino Beauty, ganhador Casamentos Awards 2025 de Casamentos.com.br"
+            >
+              <img
+                src="https://cdn1.casamentos.com.br/img/badges/2025/badge-weddingawards_pt_BR.jpg"
+                alt="Dayane Galdino Beauty, ganhador Casamentos Awards 2025 de Casamentos.com.br"
+                loading="lazy"
+              />
+            </a>
+            <a
+              href={casamentosUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Dayane Galdino Beauty, ganhador Casamentos Awards 2026 de Casamentos.com.br"
+            >
               <img
                 src="https://cdn1.casamentos.com.br/img/badges/2026/badge-weddingawards_pt_BR.jpg"
-                alt="Wedding Awards 2026"
+                alt="Dayane Galdino Beauty, ganhador Casamentos Awards 2026 de Casamentos.com.br"
+                loading="lazy"
               />
             </a>
           </div>
@@ -204,11 +211,13 @@ function Atendimento() {
 
           <div className="finalCtaContent">
             <span className="eyebrow">PRONTA PARA O SEU DIA?</span>
-            <h2>
-              Vamos conversar sobre o seu
-              <br />
-              <em>grande dia?</em>
-            </h2>
+            <div className="finalCtaConcerto">
+              <h2>
+                Vamos conversar sobre o seu
+                <br />
+                <em>grande dia?</em>
+              </h2>
+            </div>
             <a className="button light" href={casamentosUrl} target="_blank" rel="noopener noreferrer">
               Agendar atendimento
               <ArrowRight size={18} />
