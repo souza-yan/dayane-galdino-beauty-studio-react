@@ -34,13 +34,6 @@ const features = [
   },
 ];
 
-const steps = [
-  { number: '01', title: 'Contato', text: 'Entre em contato e compartilhe sua ideia.' },
-  { number: '02', title: 'Alinhamento', text: 'Conversamos sobre estilo, referências e desejo.' },
-  { number: '03', title: 'Agendamento', text: 'Definimos a data e todos os detalhes do atendimento.' },
-  { number: '04', title: 'Grande dia', text: 'Seu look fica pronto para você brilhar com confiança.' },
-];
-
 const specialties = [
   'Maquiagem para Noivas',
   'Maquiagem para Madrinhas',
