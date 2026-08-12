@@ -6,9 +6,9 @@ import {
   HeartHandshake,
   Sparkles,
 } from 'lucide-react';
-import heroImage from '../assets/images/dayanepose.PNG';
 import aboutImage from '../assets/images/dayane.jpeg';
 import ctaImage from '../assets/images/dayanemake.jpeg';
+import noiva2Image from '../assets/images/noiva2.jpeg';
 import Header from '../components/Header';
 
 const features = [
@@ -51,38 +51,95 @@ function Atendimento() {
       <main>
         <section className="atendimentoHero atendimentoSection">
           <div className="atendimentoHeroContent">
-            <span className="eyebrow dark">ATENDIMENTO PREMIUM</span>
+            <span className="eyebrow dark">BELEZA DA NOIVA</span>
 
             <h1>
-              Seu grande dia merece uma
-              <br />
-              <em>maquiagem inesquecível.</em>
+              Experiência Dayane Galdino Beauty
             </h1>
 
             <p>
-              Um atendimento sofisticado, acolhedor e cuidadosamente pensado para destacar sua beleza,
-              valorizar seus traços e deixar sua presença ainda mais memorável.
+              O Dia da Noiva Maison foi criado para noivas que desejam viver o seu grande dia com tranquilidade, segurança e a certeza de que cada detalhe da sua beleza está sendo cuidadosamente conduzido por uma especialista.
+            </p>
+
+            <p>
+              Para mulheres que valorizam uma experiência exclusiva, organizada e sofisticada, onde beleza e acolhimento caminham juntos para tornar esse momento ainda mais especial.
             </p>
 
           </div>
 
           <div className="atendimentoHeroVisual">
-            <img src={heroImage} alt="Dayane Galdino em atendimento" />
+            <img src={noiva2Image} alt="Dayane Galdino em atendimento" />
           </div>
         </section>
 
         <section className="atendimentoSection">
           <div className="sectionHeading">
-            <span className="eyebrow dark">POR QUE ESCOLHER</span>
+            <span className="eyebrow dark">O QUE VOCÊ IRÁ VIVER</span>
             <h2>
-              Um atendimento feito para
+              Mais do que maquiagem e penteado,
               <br />
-              <em>exaltar sua essência.</em>
+              <em>uma experiência completa</em>
             </h2>
           </div>
 
           <div className="featuresGrid">
-            {features.map((feature) => {
+            {[
+              {
+                icon: Sparkles,
+                title: 'Atendimento exclusivo e personalizado',
+                text: 'Um cuidado pensado para valorizar sua beleza, seu estilo e a sua essência.',
+              },
+              {
+                icon: BadgeCheck,
+                title: 'Briefing De Beleza',
+                text: 'Consultoria de imagem e direcionamento estético para um resultado alinhado ao seu momento.',
+              },
+              {
+                icon: Crown,
+                title: 'Teste de maquiagem e penteado',
+                text: 'Definição do seu estilo com escolha certeira para a sua aparência no grande dia.',
+              },
+              {
+                icon: Sparkles,
+                title: 'Técnica de alta performance',
+                text: 'Pele de alta resistência para manter sua beleza impecável por mais tempo.',
+              },
+              {
+                icon: Clock3,
+                title: 'Cronograma estratégico',
+                text: 'Planejamento para um dia tranquilo, organizado e sem imprevistos.',
+              },
+              {
+                icon: HeartHandshake,
+                title: 'Organização dos atendimentos',
+                text: 'Acompanhamento cuidadoso de mães, madrinhas e familiares para manter todo o processo harmonioso.',
+              },
+              {
+                icon: Sparkles,
+                title: 'Suporte para making of, fotos e filmagens',
+                text: 'Assistência para que seus registros fiquem ainda mais especiais e naturais.',
+              },
+              {
+                icon: BadgeCheck,
+                title: 'Direção de beleza',
+                text: 'Orientação para valorizar cada detalhe dos seus registros com elegância.',
+              },
+              {
+                icon: Crown,
+                title: 'Equipe preparada',
+                text: 'Excelência em cada etapa para que você viva o seu dia com leveza e confiança.',
+              },
+              {
+                icon: HeartHandshake,
+                title: 'Acompanhamento profissional do início ao fim',
+                text: 'Uma experiência cuidadosa e segura em cada momento da sua preparação.',
+              },
+              {
+                icon: BadgeCheck,
+                title: 'Contrato, planejamento e atendimento',
+                text: 'Tudo conduzido com total profissionalismo e organização para sua tranquilidade.',
+              },
+            ].map((feature) => {
               const Icon = feature.icon;
               return (
                 <article className="featureCard" key={feature.title}>
@@ -97,50 +154,9 @@ function Atendimento() {
           </div>
         </section>
 
-
-        <section className="atendimentoSection">
-          <div className="sectionHeading">
-            <span className="eyebrow dark">ESPECIALIDADES</span>
-            <h2>
-              Soluções pensadas para cada
-              <br />
-              <em>momento especial.</em>
-            </h2>
-          </div>
-
-          <div className="specialtiesGrid">
-            {specialties.map((specialty) => (
-              <article className="specialtyCard" key={specialty}>
-                <div className="specialtyIcon">
-                  <Crown size={18} />
-                </div>
-                <h3>{specialty}</h3>
-                <p>Um resultado elegante, sofisticado e alinhado com sua personalidade.</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
         <section className="atendimentoSection aboutDayaneSection" id="sobre-dayane">
           <div className="aboutDayaneImage">
             <img src={aboutImage} alt="Dayane Galdino" />
-          </div>
-
-          <div className="aboutDayaneContent">
-            <span className="eyebrow dark">SOBRE A DAYANE</span>
-            <h2>
-              Mais que beleza,
-              <br />
-              <em>uma presença marcada.</em>
-            </h2>
-            <p>
-              Com sensibilidade, técnica e olhar artístico, Dayane transforma momentos especiais em
-              experiências memoráveis, sempre com elegância e personalidade.
-            </p>
-            <p>
-              Em breve, aqui você poderá encontrar mais detalhes sobre formação, trajetória e experiências
-              que reforçam a excelência do atendimento.
-            </p>
           </div>
         </section>
 

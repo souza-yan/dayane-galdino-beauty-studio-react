@@ -598,6 +598,7 @@ em {
 
 .cardImage {
   height: 175px;
+  overflow: hidden;
 }
 
 .cardImage img {
@@ -607,7 +608,7 @@ em {
 
   object-fit: cover;
 
-  object-position: center top;
+  object-position: center 34%;
 }
 
 .cardBody {
