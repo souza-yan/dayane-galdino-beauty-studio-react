@@ -11,36 +11,6 @@ import ctaImage from '../assets/images/dayanemake.jpeg';
 import noiva2Image from '../assets/images/noiva2.jpeg';
 import Header from '../components/Header';
 
-const features = [
-  {
-    icon: Sparkles,
-    title: 'Atendimento personalizado',
-    text: 'Cada detalhe é pensado para valorizar sua beleza e refletir sua personalidade.',
-  },
-  {
-    icon: BadgeCheck,
-    title: 'Produtos profissionais',
-    text: 'Utilizo produtos de alto padrão para um resultado sofisticado e duradouro.',
-  },
-  {
-    icon: Clock3,
-    title: 'Pontualidade',
-    text: 'Organização e atenção aos detalhes para que seu dia aconteça com tranquilidade.',
-  },
-  {
-    icon: HeartHandshake,
-    title: 'Experiência com noivas',
-    text: 'Um acolhimento especial para que você se sinta segura e encantada.',
-  },
-];
-
-const specialties = [
-  'Maquiagem para Noivas',
-  'Maquiagem para Madrinhas',
-  'Maquiagem para Formandas',
-  'Produções para Eventos',
-];
-
 const casamentosUrl = 'https://wa.me/';
 
 function Atendimento() {
