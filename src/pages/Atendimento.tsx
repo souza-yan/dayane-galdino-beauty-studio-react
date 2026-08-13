@@ -28,7 +28,7 @@ function Atendimento() {
             </h1>
 
             <p>
-              O Dia da Noiva Maison foi criado para noivas que desejam viver o seu grande dia com tranquilidade, segurança e a certeza de que cada detalhe da sua beleza está sendo cuidadosamente conduzido por uma especialista.
+              O Dia da Noiva foi criado para noivas que desejam viver o seu grande dia com tranquilidade, segurança e a certeza de que cada detalhe da sua beleza está sendo cuidadosamente conduzido por uma especialista.
             </p>
 
             <p>
@@ -198,7 +198,7 @@ function Atendimento() {
               </h2>
             </div>
             <a className="button light" href={casamentosUrl} target="_blank" rel="noopener noreferrer">
-              Agendar atendimento
+              Conheça os Pacotes de Noiva
               <ArrowRight size={18} />
             </a>
           </div>
