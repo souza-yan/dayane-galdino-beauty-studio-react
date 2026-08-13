@@ -6,12 +6,22 @@ import {
   HeartHandshake,
   Sparkles,
 } from 'lucide-react';
-import aboutImage from '../assets/images/dayane.jpeg';
-import ctaImage from '../assets/images/dayanemake.jpeg';
+import aboutImage from '../assets/images/noivas2.jpeg';
+import aboutImageTwo from '../assets/images/noiva3.jpeg';
+import aboutImageThree from '../assets/images/noivas.jpeg';
+import aboutImageFour from '../assets/images/modelomadrinha.jpeg';
+import ctaImage from '../assets/images/dayanelogo.jpeg';
 import noiva2Image from '../assets/images/noiva2.jpeg';
 import Header from '../components/Header';
 
 const casamentosUrl = 'https://wa.me/';
+
+const aboutGallery = [
+  { src: aboutImage, alt: 'Dayane Galdino em retrato' },
+  { src: aboutImageTwo, alt: 'Dayane Galdino trabalhando' },
+  { src: aboutImageThree, alt: 'Dayane Galdino em maquiagem' },
+  { src: aboutImageFour, alt: 'Dayane Galdino perfil' },
+];
 
 function Atendimento() {
   return (
@@ -34,6 +44,11 @@ function Atendimento() {
             <p>
               Para mulheres que valorizam uma experiência exclusiva, organizada e sofisticada, onde beleza e acolhimento caminham juntos para tornar esse momento ainda mais especial.
             </p>
+
+            <a href="#offer" className="button primary">
+              Obter acesso
+              <ArrowRight size={18} />
+            </a>
 
           </div>
 
@@ -125,8 +140,12 @@ function Atendimento() {
         </section>
 
         <section className="atendimentoSection aboutDayaneSection" id="sobre-dayane">
-          <div className="aboutDayaneImage">
-            <img src={aboutImage} alt="Dayane Galdino" />
+          <div className="aboutDayaneGallery" aria-label="Galeria de fotos da Dayane Galdino">
+            {aboutGallery.map((image) => (
+              <div className="aboutDayanePhoto" key={image.alt}>
+                <img src={image.src} alt={image.alt} />
+              </div>
+            ))}
           </div>
         </section>
 
@@ -189,7 +208,9 @@ function Atendimento() {
           <div className="finalCtaOverlay" />
 
           <div className="finalCtaContent">
-            <span className="eyebrow">PRONTA PARA O SEU DIA?</span>
+            <span className="eyebrow" id="offer">
+              PRONTA PARA O SEU DIA?
+            </span>
             <div className="finalCtaConcerto">
               <h2>
                 Vamos conversar sobre o seu

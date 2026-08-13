@@ -239,12 +239,12 @@ function App() {
             </span>
 
             <h2>
-              Beleza pensada para <em>você</em>
+              Beleza criada para valorizar <br></br>
+              <em>quem você é</em>
             </h2>
 
             <p>
-              Escolha a experiência que deseja viver
-              e entre em contato para saber mais.
+              Cada detalhe é pensado para que você viva uma experiência leve, elegante e inesquecível.]
             </p>
 
           </div>
@@ -266,19 +266,36 @@ function App() {
               <div className="cardBody">
 
                 <h3>
-                  Atendimento
+                  Beleza da Noiva
                 </h3>
 
                 <p>
-                  Um atendimento personalizado, pensado para
-                  valorizar seus traços e destacar sua beleza.
+                  Escolha a experiência que deseja viver e entre em contato para receber um atendimento personalizado.
                 </p>
 
                 <Link to="/atendimento">
-                  Agendar atendimento
+                  Conheça os Nossos Pacotes
                   <ArrowRight size={16} />
                 </Link>
 
+                <a
+                href={links.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Pacote de Madrinhas
+                <ArrowRight size={16} />
+              </a>
+
+                <a
+                href={links.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Atendimento Social
+                <ArrowRight size={16} />
+              </a>
+            
               </div>
 
             </article>
@@ -302,12 +319,8 @@ function App() {
 
               <div className="cardBody">
 
-                <span className="tag">
-                  ONLINE
-                </span>
-
                 <h3>
-                  Cursos
+                  Cursos Online
                 </h3>
 
                 <p>
@@ -341,18 +354,13 @@ function App() {
               </h3>
 
               <p>
-                Aprenda técnicas ao vivo com acompanhamento profissional
-                em um ambiente criado para o seu desenvolvimento.
+                Descubra a formação ideal para o seu momento profissional.
               </p>
 
-              <a
-                href={links.whatsapp}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Quero saber mais
-                <ArrowRight size={16} />
-              </a>
+              <Link to="/cursos-presenciais">
+                  CONHEÇA NOSSOS CURSOS
+                  <ArrowRight size={16} />
+                </Link>
 
             </article>
 

@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import App from './App';
 import CursosPage from './pages/cursos';
 import Curso from './pages/curso';
+import CursosPresenciaisPage from './pages/cursos-presenciais';
 import AtendimentoPage from './pages/Atendimento';
 import './styles.css';
 
@@ -29,6 +30,7 @@ function AppRoutes() {
         <Route path="/" element={<App />} />
         <Route path="/atendimento" element={<AtendimentoPage />} />
         <Route path="/cursos" element={<CursosPage />} />
+        <Route path="/cursos-presenciais" element={<CursosPresenciaisPage />} />
         <Route path="/cursos/:slug" element={<Curso />} />
       </Routes>
     </div>
