@@ -1,6 +1,9 @@
 import automaquilhagemImage from '../assets/images/dayanemake.jpeg';
 import maquiagemProfissionalImage from '../assets/images/dayanecomputador.jpeg';
 import belezaImagemImage from '../assets/images/dayanepose.PNG';
+import packnoiva1 from '../assets/images/packnoivas1.jpeg';
+import packnoiva2 from '../assets/images/packnoivas2.jpeg';
+import packnoiva3 from '../assets/images/packnoivas3.jpeg';
 
 export interface Course {
   id: number;
@@ -121,7 +124,7 @@ export const courses: Course[] = [
       "Quer aumentar sua renda."
     ],
 
-    galleryImages: [maquiagemProfissionalImage, automaquilhagemImage, belezaImagemImage],
+    galleryImages: [packnoiva1, packnoiva2, packnoiva3],
 
     materials: [
       {
